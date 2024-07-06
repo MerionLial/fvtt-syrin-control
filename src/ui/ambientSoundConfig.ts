@@ -24,9 +24,12 @@ export async function onAmbientSoundConfig(
 	if (details.data.flags?.syrinscape === undefined) {
 		return;
 	}
+
 	const windowContent = window.find('.window-content');
 	windowContent.attr('style', 'padding: 0;');
-	let form = windowContent.find('form');
+
+	// Changed structure in V12 - Root window is the entire form, window content needs to be replaced.
+	let form = window.is('form') ? windowContent : window.filter('form');
 	form.empty();
 
 	let component = new AmbientSoundConfigComponent({

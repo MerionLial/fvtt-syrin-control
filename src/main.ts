@@ -106,9 +106,18 @@ Hooks.once('init', function () {
 	Hooks.on('renderPlaylistSoundConfig', async (_: any, node: JQuery<Element>, details: any) => {
 		await onPlaylistSoundConfig(ctx, node, details);
 	});
-	Hooks.on('renderAmbientSoundConfig', async (_: any, node: JQuery<Element>, details: any) => {
-		await onAmbientSoundConfig(ctx, node, details);
-	});
+	Hooks.on(
+		'renderAmbientSoundConfig',
+		async (ambientSoundConfig: AmbientSoundConfig, node: JQuery<Element>, details: any) => {
+			if (details === undefined) {
+				// V12 Compatibility
+				details = { data: ambientSoundConfig.document };
+				node = $(node);
+			}
+
+			await onAmbientSoundConfig(ctx, node, details);
+		}
+	);
 
 	Hooks.on('closeSettingsConfig', async () => {
 		if (!ctx.game.isGM()) {

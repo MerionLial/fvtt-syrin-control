@@ -57,7 +57,7 @@
 <div class={class_} {style} data-test="syrin-ambient-sound-config">
 	<div>
 		<p class="notes">
-			{ctx.game.localizeCore('SOUND.ConfigHint')}
+			{ctx.game.localizeCore('SOUND.ConfigTitle')}
 		</p>
 
 		<div class="form-group">
@@ -103,7 +103,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="">{ctx.game.localizeCore('SOUND.Radius')}</label>
+			<label for="">{ctx.game.localizeCore('AMBIENT_SOUND.FIELDS.radius.label')}</label>
 			<div class="form-fields">
 				<input
 					type="number"
@@ -115,14 +115,14 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="">{ctx.game.localizeCore('SOUND.Walls')}</label>
+			<label for="">{ctx.game.localizeCore('AMBIENT_SOUND.FIELDS.walls.label')}</label>
 			<input type="checkbox" data-test="syrin-walls" name="walls" bind:checked={walls} />
 			<p class="hint">
-				{ctx.game.localizeCore('SOUND.WallsHint')}
+				{ctx.game.localizeCore('AMBIENT_SOUND.FIELDS.walls.hint')}
 			</p>
 		</div>
 		<div class="form-group">
-			<label for="">{ctx.game.localizeCore('SOUND.DarknessRange')}</label>
+			<label for="">{ctx.game.localizeCore('AMBIENT_SOUND.FIELDS.darkness.label')}</label>
 			<div class="form-fields">
 				<label for="darkness.min">{ctx.game.localizeCore('Between')}</label>
 				<input
@@ -148,7 +148,7 @@
 				/>
 			</div>
 			<p class="hint">
-				{ctx.game.localizeCore('SOUND.DarknessRangeHint')}
+				{ctx.game.localizeCore('AMBIENT_SOUND.FIELDS.darkness.hint')}
 			</p>
 		</div>
 	</div>
@@ -174,15 +174,19 @@
 		<button type="submit">
 			<i class="far fa-save" />
 			{#if create}
-				{ctx.game.localizeCore('SOUND.Create')}
+				{ctx.game.localizeCore('AMBIENT_SOUND.ACTIONS.CREATE')}
 			{:else}
-				{ctx.game.localizeCore('SOUND.Update')}
+				{ctx.game.localizeCore('AMBIENT_SOUND.ACTIONS.UPDATE')}
 			{/if}
 		</button>
 	</div>
 </div>
 
 <style>
+	div {
+		padding: 2px;
+	}
+
 	.inner {
 		padding: 8px;
 		display: flex;
@@ -198,9 +202,5 @@
 	.inner-invert .hint,
 	.inner-invert .units {
 		color: var(--color-text-light-highlight);
-	}
-	.inner button,
-	.inner input {
-		background: url(/ui/parchment.jpg) repeat;
 	}
 </style>

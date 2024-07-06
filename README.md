@@ -5,21 +5,23 @@
 # SyrinControl - provides integration with Syrinscape Online
 
 > [!IMPORTANT]
+>
 > # This module is no longer maintained.
 >
 > Sorry! I really didn't find time or motivation to continue maintaining this project.
-> 
+>
 > First of all, I was always driven by my own campaign that is probably going to end in next 3-4 sessions (4 years of running Masks Of Nyarlathotep :) ).
-> 
+>
 > Then, I overestimated my players need for Syrinscape - They don't really feel that much difference. It was an amazing tool for me to get into the right
-> creative space, especially that Syrinscape provides soundsets for my campaign, but... They just mute it and play their own moods with the help of YouTube. 
+> creative space, especially that Syrinscape provides soundsets for my campaign, but... They just mute it and play their own moods with the help of YouTube.
 >
 > And then, final nail to the coffin - recently we started playing using only discord, rolling physical dices (and trusting each other)... So not only I
 > use less Syrinscape, but Foundry as well...
 >
 > ## Okay, what's next?
+>
 > Well... I am not going to update this module or fix bugs in it. It is obvious that I ignored that project and all people asking for the change for too long.
-> Sorry for that. I was lying to myself "if only I had a weekend free", etc. But in the end, after a week of vacation break I still didn't touch the project so it is the best to just be transparent and honest (also with myself). 
+> Sorry for that. I was lying to myself "if only I had a weekend free", etc. But in the end, after a week of vacation break I still didn't touch the project so it is the best to just be transparent and honest (also with myself).
 >
 > **If there is someone willing to maintain this module, I can transfer ownership.**
 >
