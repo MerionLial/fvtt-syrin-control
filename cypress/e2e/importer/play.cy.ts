@@ -24,10 +24,7 @@ describe('importer.playing mood', () => {
 	});
 
 	it('should show stop button when mood is currently playing', () => {
-		cy.onHook('ready', () => {
-			cy.callSyrinHook('moodChange', 1234);
-		});
-
+		cy.callSyrinHook('moodChange', 1234);
 		cy.importerExpandSoundset('first');
 		cy.wait('@requestMoods');
 

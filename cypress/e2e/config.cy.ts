@@ -1,5 +1,6 @@
 describe('config', () => {
 	beforeEach(() => {
+		Cypress.Keyboard.defaults({ keystrokeDelay: 20 });
 		cy.login('Gamemaster');
 		cy.clearWorld();
 		cy.mockAPI();

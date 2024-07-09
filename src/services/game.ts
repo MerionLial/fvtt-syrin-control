@@ -249,9 +249,19 @@ export class FVTTGameImpl implements FVTTGame {
 		const { game } = this;
 		const audio = game.audio as any;
 		if (audio.unlock !== undefined) {
-			// V10
+			// V10+
 			await audio.unlock;
-			const context = game.audio.getAudioContext();
+			var context = null;
+
+			// V12 - Type info is still not updated so access as `any`.
+			if (audio.getAnalyzerContext !== undefined) {
+				context = audio.getAnalyzerContext();
+			}
+			// V10-11
+			else if (game.audio.getAudioContext !== undefined) {
+				context = game.audio.getAudioContext();
+			}
+
 			if (context === null) return undefined;
 			return context;
 		} else {

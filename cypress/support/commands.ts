@@ -16,7 +16,7 @@ Cypress.Commands.add('login', (who: string) => {
 		cy.visit('/join');
 		cy.intercept('/game').as('loginRequest');
 		cy.get('select').select(who);
-		cy.get(':nth-child(1) > button').click();
+		cy.get('button[name=join]').click();
 		cy.wait('@loginRequest');
 	});
 	cy.visit('/game');
@@ -29,7 +29,7 @@ Cypress.Commands.add('gotoSettings', () => {
 });
 
 Cypress.Commands.add('openSidebar', (tab: string) => {
-	cy.get(`#sidebar-tabs > [data-tab="${tab}"]`).click();
+	cy.get(`#sidebar-tabs > [data-tab="${tab}"]`).should('be.visible').click();
 });
 Cypress.Commands.add('openImporter', () => {
 	cy.openSidebar('playlists');
@@ -141,7 +141,7 @@ Cypress.Commands.add('importPlaylist', () => {
 
 	cy.get('[data-test="syrin-import-playlists-btn"]').as('importBtn').click();
 
-	cy.get('.header-button').click();
+	cy.get('.header-button').click().should('not.exist');
 	cy.get('.notification > .close').should('be.visible').click({ multiple: true });
 });
 

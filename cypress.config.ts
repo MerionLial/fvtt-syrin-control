@@ -9,7 +9,7 @@ export default defineConfig({
 		runMode: 2
 	},
 	e2e: {
-		baseUrl: 'https://127.0.0.1:9443',
+		baseUrl: 'https://localhost:9443',
 		experimentalStudio: true,
 		setupNodeEvents(on, _config) {
 			on('before:browser:launch', (browser, launchOptions) => {
