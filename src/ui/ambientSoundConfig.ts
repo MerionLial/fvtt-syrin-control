@@ -29,7 +29,7 @@ export async function onAmbientSoundConfig(
 	windowContent.attr('style', 'padding: 0;');
 
 	// Changed structure in V12 - Root window is the entire form, window content needs to be replaced.
-	let form = window.is('form') ? windowContent : window.filter('form');
+	let form = window.is('form') ? windowContent : windowContent.find('form');
 	form.empty();
 
 	let component = new AmbientSoundConfigComponent({
